@@ -30,7 +30,7 @@ router.post(`/:cId/product/:pId`, async (req, res) => {
     const cartId = +req.params.cId;
     const prodId = +req.params.pId;
     const addedProduct = await cartManager.addProductToCart(cartId, prodId);
-    res.status(200).send(addedProduct);
+    res.status(200).send("Producto agregado", addedProduct);
   } catch (err) {
     res.status(400).json({ error: err.message });
   }
